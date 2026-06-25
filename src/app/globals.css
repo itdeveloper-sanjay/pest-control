@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #2E7D32;
+  --color-brand-primary-hover: #1B5E20;
+  --color-brand-secondary: #4CAF50;
+  --color-brand-accent: #F9A825;
+  
+  --color-brand-bg-main: #FAFBF7;
+  --color-brand-bg-card: #FFFFFF;
+  --color-brand-bg-alt: #F4F8F2;
+  
+  --color-brand-text-primary: #1B1F23;
+  --color-brand-text-secondary: #5F6B7A;
+  --color-brand-text-muted: #8A94A6;
+  
+  --color-brand-border-default: #DDE5D8;
+  --color-brand-border-hover: #2E7D32;
+  
+  --color-brand-status-success: #43A047;
+  --color-brand-status-warning: #F9A825;
+  --color-brand-status-error: #D32F2F;
+}
+
+:root {
+  --background: var(--color-brand-bg-main);
+  --foreground: var(--color-brand-text-primary);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Custom Gradients as requested */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, #F9A825 0%, #FFCA28 100%);
+}
