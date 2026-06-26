@@ -4,14 +4,37 @@ import LocationMap from '../../../components/LocationMap';
 import CompanyVision from '../../../components/CompanyVision';
 import CoreValues from '../../../components/CoreValues';
 import about1Image from '../../../assets/about1.webp';
-
+import heroAbout from '../../../assets/heroabout.webp';
 export default function AboutPage() {
   return (
     <div className="flex-1 w-full bg-brand-bg-main flex flex-col">
+      {/* Hero Section */}
+      <section className="relative w-full min-h-[500px] flex items-center justify-center pb-16">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={heroAbout}
+            alt="About Professionalz PMS"
+            fill
+            className="object-cover object-center"
+            priority
+            placeholder="blur"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        
+        <div className="relative z-10 text-center px-4 pt-28">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+            About Us
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
+            Dedicated to providing a safe and healthy environment through expert pest control management.
+          </p>
+        </div>
+      </section>
+
       {/* Intro Section - Default Bg */}
       <section className="w-full py-16">
         <div className="max-w-6xl mx-auto px-8">
-          <h1 className="text-4xl font-bold mb-12 text-brand-text-primary text-center">About Us</h1>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Text */}

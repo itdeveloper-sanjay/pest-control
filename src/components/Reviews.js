@@ -3,40 +3,41 @@ import { Star } from 'lucide-react';
 const reviews = [
   {
     id: 1,
-    quote: "We switched our entire corn program to Aurora Hybrid and saw our best harvest in fifteen years, even through a dry July.",
-    name: "Marcus Bell",
-    role: "Grain farmer, Iowa",
-    initials: "MB"
+    quote: "We had a severe termite problem in our new house. Professionalz PMS completely eradicated them and provided a 5-year warranty. Highly recommended!",
+    name: "Rajesh Kumar",
+    role: "Homeowner, Delhi",
+    initials: "RK"
   },
   {
     id: 2,
-    quote: "The agronomy team genuinely understands our soil. Their recommendations paid for themselves in the first season.",
-    name: "Priya Nair",
-    role: "Farm manager, Punjab",
-    initials: "PN"
+    quote: "Their team was extremely professional. They used eco-friendly chemicals which was very important for us since we have pets at home.",
+    name: "Priya Sharma",
+    role: "Resident, Gurgaon",
+    initials: "PS"
   },
   {
     id: 3,
-    quote: "Goldspike wheat gave us the protein content our mill demands, with the winter hardiness our climate requires.",
-    name: "Tomas Kovac",
-    role: "Cooperative lead, Slovakia",
-    initials: "TK"
+    quote: "We've signed an AMC for our office building. Since then, we haven't seen a single cockroach or rodent. Best pest control service in NCR.",
+    name: "Amit Desai",
+    role: "Facility Manager, Noida",
+    initials: "AD"
   }
 ];
 
 export default function Reviews() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-brand-bg-main">
-      <div className="text-center mb-16">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 w-full bg-brand-primary/5">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
         <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-brand-bg-alt mb-6">
           <div className="w-1.5 h-1.5 rounded-full bg-brand-accent mr-2"></div>
-          <span className="text-xs font-bold tracking-wider text-brand-primary uppercase">Grower Stories</span>
+          <span className="text-xs font-bold tracking-wider text-brand-primary uppercase">Customer Stories</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-extrabold text-brand-text-primary mb-6 tracking-tight">
-          Trusted on farms around the world
+          Trusted by families and businesses across NCR
         </h2>
         <p className="text-lg text-brand-text-secondary max-w-2xl mx-auto">
-          Real results from the growers who plant ZPSM season after season.
+          Real results from the customers who rely on Professionalz PMS for a pest-free environment.
         </p>
       </div>
 
@@ -67,6 +68,7 @@ export default function Reviews() {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

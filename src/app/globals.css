@@ -41,3 +41,13 @@ body {
 .bg-gradient-accent {
   background: linear-gradient(135deg, #F9A825 0%, #FFCA28 100%);
 }
+
+/* Ensure all interactive elements have pointer cursors */
+button, a {
+  cursor: pointer !important;
+}
+
+/* Hide floating buttons when mobile menu is open */
+body.mobile-menu-open #floating-buttons {
+  display: none !important;
+}

@@ -1,4 +1,5 @@
 import "./globals.css";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 export const metadata = {
   title: "Professionalz PMS",
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col bg-brand-bg-main text-brand-text-primary font-sans">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

@@ -5,19 +5,19 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 const faqs = [
   {
     question: "What services does Professionalz PMS provide?",
-    answer: "We offer advanced crop protection, agritech solutions, and comprehensive pest management systems for agricultural and commercial applications."
+    answer: "We offer comprehensive pest management systems for residential and commercial properties, including anti-termite treatment, cockroach control, rodent control, and general pest control."
   },
   {
     question: "How can I request a quote?",
-    answer: "You can request a quote by clicking the 'Request a quote' button in the header or by visiting our Contact page and filling out the inquiry form."
+    answer: "You can request a quote by clicking the 'Request a quote' button in the header, using the floating Call/WhatsApp buttons, or by visiting our Contact page."
   },
   {
     question: "Are your solutions environmentally friendly?",
-    answer: "Yes, we prioritize sustainable and eco-friendly practices in all our agritech and crop protection solutions."
+    answer: "Yes, we prioritize sustainable and eco-friendly practices. We use safe, tested chemicals that are highly effective against pests but harmless to human health and pets."
   },
   {
-    question: "Do you offer support after implementation?",
-    answer: "Absolutely! We provide ongoing support and maintenance to ensure our systems continue to operate at peak efficiency."
+    question: "Do you offer Annual Maintenance Contracts (AMC)?",
+    answer: "Absolutely! We take charge of the yearly maintenance of your place through our AMC plans, ensuring you remain pest-free all year round."
   }
 ];
 

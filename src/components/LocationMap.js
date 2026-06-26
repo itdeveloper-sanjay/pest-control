@@ -2,7 +2,7 @@ import { siteData } from '../config/siteData';
 
 export default function LocationMap() {
   return (
-    <section className="pt-12 w-full bg-brand-bg-alt border-t border-brand-border-default mt-8">
+    <section className="pt-8 md:pt-12 w-full bg-brand-bg-alt border-t border-brand-border-default mt-0 md:mt-4">
       <div className="text-center mb-8 px-4">
         <h2 className="text-3xl font-bold text-brand-text-primary mb-3">Our Location</h2>
         <p className="text-brand-text-secondary text-lg">{siteData.contact.address.fullAddress}</p>
