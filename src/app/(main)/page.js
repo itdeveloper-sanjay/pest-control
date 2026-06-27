@@ -58,9 +58,7 @@ export default function Home() {
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-base sm:text-lg md:text-2xl max-w-2xl mx-auto mb-8 md:mb-10 text-gray-200 drop-shadow font-medium text-center">
             Protect your home and business with our expert pest management services. We provide safe, eco-friendly, and effective treatments across Mohali/Chandigarh.
           </motion.p>
-          <motion.button initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-brand-accent text-brand-text-primary font-bold py-4 px-10 rounded-full shadow-xl hover:-translate-y-1 hover:shadow-2xl hover:opacity-90 transition-all duration-300 text-lg cursor-pointer">
-            Get Started Today
-          </motion.button>
+
         </div>
       </section>
 
