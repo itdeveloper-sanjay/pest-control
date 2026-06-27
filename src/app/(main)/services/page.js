@@ -267,12 +267,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </motion.div>
-              <motion.div variants={itemVariants} className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
+              <motion.div variants={itemVariants} className="flex-1 w-full relative rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl flex items-center justify-center">
                 <Image
                   src={service5}
                   alt="Treatment for RCC Foundations & Basement"
-                  fill
-                  className="object-cover transition-transform duration-700"
+                  className="w-full h-auto transition-transform duration-700"
                 />
               </motion.div>
             </div>
