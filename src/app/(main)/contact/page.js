@@ -153,13 +153,13 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-8">
             
             {/* Business Hours */}
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-brand-primary/10 flex gap-6 items-start hover:shadow-md transition-shadow">
-              <div className="bg-brand-accent/20 p-4 rounded-2xl shrink-0">
-                <Clock size={32} className="text-brand-accent" />
+            <div className="bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-3xl shadow-sm border border-brand-primary/10 flex flex-col sm:flex-row gap-4 md:gap-6 items-start hover:shadow-md transition-shadow">
+              <div className="bg-brand-accent/20 p-3 md:p-4 rounded-xl md:rounded-2xl shrink-0">
+                <Clock className="w-6 h-6 md:w-8 md:h-8 text-brand-accent" />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-brand-text-primary mb-4">Business Hours</h3>
-                <ul className="space-y-3 text-brand-text-secondary text-lg">
+              <div className="w-full">
+                <h3 className="text-xl md:text-2xl font-bold text-brand-text-primary mb-3 md:mb-4">Business Hours</h3>
+                <ul className="space-y-3 text-brand-text-secondary text-base md:text-lg">
                   <li className="flex justify-between items-center border-b border-gray-100 pb-2">
                     <span className="font-medium">Monday - Saturday</span>
                     <span className="text-brand-primary font-bold">9:00 AM - 7:00 PM</span>
@@ -176,13 +176,13 @@ export default function ContactPage() {
             </div>
 
             {/* Service Areas */}
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-brand-primary/10 flex gap-6 items-start hover:shadow-md transition-shadow">
-              <div className="bg-brand-primary/10 p-4 rounded-2xl shrink-0">
-                <Building size={32} className="text-brand-primary" />
+            <div className="bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-3xl shadow-sm border border-brand-primary/10 flex flex-col sm:flex-row gap-4 md:gap-6 items-start hover:shadow-md transition-shadow">
+              <div className="bg-brand-primary/10 p-3 md:p-4 rounded-xl md:rounded-2xl shrink-0">
+                <Building className="w-6 h-6 md:w-8 md:h-8 text-brand-primary" />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-brand-text-primary mb-4">Areas We Serve</h3>
-                <p className="text-brand-text-secondary text-lg mb-4">
+              <div className="w-full">
+                <h3 className="text-xl md:text-2xl font-bold text-brand-text-primary mb-3 md:mb-4">Areas We Serve</h3>
+                <p className="text-brand-text-secondary text-base md:text-lg mb-4">
                   We provide rapid-response pest control services across the Tricity and surrounding regions:
                 </p>
                 <div className="flex flex-wrap gap-2">

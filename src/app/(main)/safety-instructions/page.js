@@ -161,8 +161,8 @@ export default function AquaKOthrinePage() {
                 ))}
               </div>
             </div>
-            <div className="lg:w-1/2 w-full h-[400px] relative rounded-[2rem] overflow-hidden shadow-2xl">
-              <Image src={kOthrine1} alt="Water based formulation" fill className="object-cover" placeholder="blur" />
+            <div className="lg:w-1/2 w-full relative rounded-[2rem] overflow-hidden shadow-2xl flex items-center justify-center">
+              <Image src={kOthrine1} alt="Water based formulation" className="w-full h-auto" placeholder="blur" />
             </div>
           </motion.div>
         </div>
@@ -172,8 +172,8 @@ export default function AquaKOthrinePage() {
       <section className="w-full bg-brand-primary/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col-reverse lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2 w-full h-[500px] relative rounded-[2rem] overflow-hidden shadow-xl border border-brand-primary/10">
-              <Image src={kOthrine2} alt="Eco-friendly alternative" fill className="object-cover object-right" placeholder="blur" />
+            <div className="lg:w-1/2 w-full relative rounded-[2rem] overflow-hidden shadow-xl border border-brand-primary/10 flex items-center justify-center">
+              <Image src={kOthrine2} alt="Eco-friendly alternative" className="w-full h-auto" placeholder="blur" />
             </div>
             <div className="lg:w-1/2">
               <div className="inline-block px-4 py-1.5 bg-white text-brand-primary font-bold rounded-full text-sm mb-4 border border-brand-primary/20 shadow-sm">Cleaner & Safer</div>
@@ -210,8 +210,8 @@ export default function AquaKOthrinePage() {
             </p>
 
             <div className="flex flex-col lg:flex-row gap-12 items-center">
-              <div className="lg:w-1/2 w-full h-[400px] relative rounded-[2rem] overflow-hidden shadow-2xl order-2 lg:order-1">
-                <Image src={kOthrine3} alt="Spray Technology" fill className="object-cover" placeholder="blur" />
+              <div className="lg:w-1/2 w-full relative rounded-[2rem] overflow-hidden shadow-2xl order-2 lg:order-1 flex items-center justify-center">
+                <Image src={kOthrine3} alt="Spray Technology" className="w-full h-auto" placeholder="blur" />
               </div>
               <div className="lg:w-1/2 order-1 lg:order-2">
                 <div className="bg-brand-primary/5 rounded-[2rem] p-8 text-left h-full border border-brand-primary/10">
@@ -297,8 +297,8 @@ export default function AquaKOthrinePage() {
               </div>
             </div>
 
-            <div className="lg:w-5/12 w-full relative min-h-[400px] rounded-[2rem] overflow-hidden shadow-xl border border-brand-primary/10">
-              <Image src={kOthrine4} alt="Optimal Timing" fill className="object-cover" placeholder="blur" />
+            <div className="lg:w-5/12 w-full relative rounded-[2rem] overflow-hidden shadow-xl border border-brand-primary/10 flex items-center justify-center">
+              <Image src={kOthrine4} alt="Optimal Timing" className="w-full h-auto" placeholder="blur" />
             </div>
           </motion.div>
         </div>

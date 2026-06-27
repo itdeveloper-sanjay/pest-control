@@ -14,13 +14,16 @@ export default function Header() {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('mobile-menu-open');
+      document.body.style.overflow = 'hidden';
       window.dispatchEvent(new Event('mobileMenuOpened'));
     } else {
       document.body.classList.remove('mobile-menu-open');
+      document.body.style.overflow = '';
       window.dispatchEvent(new Event('mobileMenuClosed'));
     }
     return () => {
       document.body.classList.remove('mobile-menu-open');
+      document.body.style.overflow = '';
       window.dispatchEvent(new Event('mobileMenuClosed'));
     };
   }, [isOpen]);
