@@ -60,9 +60,7 @@ export default function AdminLogin() {
             Login
           </button>
         </form>
-        <div className="mt-4 text-center text-sm text-brand-text-secondary">
-          <p>Hint: Use <strong>admin</strong> / <strong>admin123</strong></p>
-        </div>
+    
       </div>
     </div>
   );

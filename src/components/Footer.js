@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { siteData } from '../config/siteData';
 import { APP_ROUTES } from '../config/routes';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 // Custom SVG Icons since Lucide removed third-party brand icons
 const FacebookIcon = ({ size = 24 }) => (
@@ -10,9 +11,10 @@ const FacebookIcon = ({ size = 24 }) => (
   </svg>
 );
 
-const TwitterIcon = ({ size = 24 }) => (
+const YoutubeIcon = ({ size = 24 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
   </svg>
 );
 
@@ -24,54 +26,97 @@ const InstagramIcon = ({ size = 24 }) => (
   </svg>
 );
 
-const LinkedinIcon = ({ size = 24 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-  </svg>
-);
+
 
 export default function Footer() {
   return (
     <footer className="bg-brand-primary-hover text-brand-bg-main mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col items-center md:items-start gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 items-start">
+          
+          {/* Brand & Description */}
+          <div className="flex flex-col items-start gap-4">
             <Link href={APP_ROUTES.HOME}>
               <Image
                 src="/logo.png"
                 alt="Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
+                width={160}
+                height={50}
+                className="h-12 w-auto bg-white/10 p-2 rounded-lg"
               />
             </Link>
-            <p className="text-brand-border-default text-sm">Advanced crop protection & agritech solutions.</p>
+            <p className="text-brand-border-default text-sm max-w-sm mt-2 leading-relaxed">
+              Expert pest management solutions for your safety. We are dedicated to providing a clean, safe, and healthy environment through professional and eco-friendly treatments.
+            </p>
+            <div className="flex gap-4 mt-4">
+              <a href={siteData.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-border-default hover:text-brand-accent hover:bg-white/10 transition-all" aria-label="Instagram">
+                <InstagramIcon size={20} />
+              </a>
+              <a href={siteData.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-border-default hover:text-brand-accent hover:bg-white/10 transition-all" aria-label="Facebook">
+                <FacebookIcon size={20} />
+              </a>
+              <a href={siteData.social.youtube} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-brand-border-default hover:text-brand-accent hover:bg-white/10 transition-all" aria-label="YouTube">
+                <YoutubeIcon size={20} />
+              </a>
+            </div>
           </div>
 
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-brand-border-default">
-            <Link href={APP_ROUTES.HOME} className="hover:text-brand-accent transition-colors">Home</Link>
-            <Link href={APP_ROUTES.PRODUCTS} className="hover:text-brand-accent transition-colors">Products</Link>
-            <Link href={APP_ROUTES.SERVICES} className="hover:text-brand-accent transition-colors">Services</Link>
-            <Link href={APP_ROUTES.ABOUT} className="hover:text-brand-accent transition-colors">About</Link>
-            <Link href={APP_ROUTES.CONTACT} className="hover:text-brand-accent transition-colors">Contact Us</Link>
-            <Link href={APP_ROUTES.PRIVACY_POLICY} className="hover:text-brand-accent transition-colors">Privacy Policy</Link>
-          </nav>
+          {/* Quick Links */}
+          <div className="flex flex-col">
+            <h3 className="text-lg font-bold text-white mb-6">Quick Links</h3>
+            <nav className="flex flex-col gap-y-3 text-sm text-brand-border-default">
+              <Link href={APP_ROUTES.HOME} className="hover:text-brand-accent transition-colors flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-accent"></div> Home
+              </Link>
+              <Link href={APP_ROUTES.ABOUT} className="hover:text-brand-accent transition-colors flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-accent"></div> About Us
+              </Link>
+              <Link href={APP_ROUTES.SERVICES} className="hover:text-brand-accent transition-colors flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-accent"></div> Services
+              </Link>
+              <Link href={APP_ROUTES.SAFETY_INSTRUCTIONS} className="hover:text-brand-accent transition-colors flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-accent"></div> Safety Instructions
+              </Link>
+              <Link href={APP_ROUTES.PRIVACY_POLICY} className="hover:text-brand-accent transition-colors flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-accent"></div> Privacy Policy
+              </Link>
+            </nav>
+          </div>
 
-          <div className="flex gap-5">
-            <a href={siteData.social.facebook} target="_blank" rel="noopener noreferrer" className="text-brand-border-default hover:text-brand-accent transition-colors" aria-label="Facebook">
-              <FacebookIcon size={24} />
-            </a>
-            <a href={siteData.social.twitter} target="_blank" rel="noopener noreferrer" className="text-brand-border-default hover:text-brand-accent transition-colors" aria-label="Twitter">
-              <TwitterIcon size={24} />
-            </a>
-            <a href={siteData.social.instagram} target="_blank" rel="noopener noreferrer" className="text-brand-border-default hover:text-brand-accent transition-colors" aria-label="Instagram">
-              <InstagramIcon size={24} />
-            </a>
-            <a href={siteData.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-brand-border-default hover:text-brand-accent transition-colors" aria-label="LinkedIn">
-              <LinkedinIcon size={24} />
-            </a>
+          {/* Contact Info */}
+          <div className="flex flex-col">
+            <h3 className="text-lg font-bold text-white mb-6">Contact Us</h3>
+            <div className="flex flex-col gap-4 text-sm text-brand-border-default/90">
+              <div className="flex items-start gap-3">
+                <div className="mt-1 p-2 rounded-full bg-white/5 text-brand-accent">
+                  <MapPin size={18} />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-semibold text-white mb-1">Our Location</span>
+                  <span className="leading-relaxed max-w-xs">{siteData.contact.address.fullAddress}</span>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3 mt-2">
+                <div className="mt-1 p-2 rounded-full bg-white/5 text-brand-accent">
+                  <Phone size={18} />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-semibold text-white mb-1">Phone Number</span>
+                  <a href={`tel:${siteData.contact.phone.replace(/\s+/g, '')}`} className="hover:text-brand-accent transition-colors">{siteData.contact.phone}</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 mt-2">
+                <div className="mt-1 p-2 rounded-full bg-white/5 text-brand-accent">
+                  <Mail size={18} />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-semibold text-white mb-1">Email Address</span>
+                  <a href={`mailto:${siteData.contact.email}`} className="hover:text-brand-accent transition-colors">{siteData.contact.email}</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

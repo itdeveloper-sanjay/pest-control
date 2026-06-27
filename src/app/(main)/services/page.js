@@ -1,46 +1,79 @@
+"use client";
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import service1 from '@/assets/services/service1.webp';
 import sitePreparationImg from '@/assets/services/site-prepration.webp';
 import soilTreatmentImg from '@/assets/services/soil-tretement.webp';
 import service4 from '@/assets/services/service4.webp';
 import service5 from '@/assets/services/service5.webp';
 import heroServiceImg from '@/assets/heroservice.webp';
+import heroServiceMobile from '@/assets/heroservicemobile.webp';
 
 export default function ServicesPage() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
   return (
     <div className="flex flex-col w-full bg-slate-50 min-h-screen pb-20">
       {/* Hero Section */}
-      <div className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden mb-8 pb-16">
+      <section className="relative w-full min-h-[500px] flex items-center justify-center pb-16 mb-8">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src={heroServiceImg} 
-            alt="Anti Termite Services" 
-            fill 
-            className="object-cover object-center"
-            priority
-          />
-          {/* Modern gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-gray-900/80" /> 
+          <div className="hidden md:block w-full h-full relative">
+            <Image
+              src={heroServiceImg}
+              alt="Anti Termite Services Desktop"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+          <div className="block md:hidden w-full h-full relative">
+            <Image
+              src={heroServiceMobile}
+              alt="Anti Termite Services Mobile"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+          {/* Overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-black/60" />
         </div>
         
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center pt-28">
-          <div className="inline-block px-4 py-1.5 bg-brand-primary/20 text-brand-primary-light backdrop-blur-md font-semibold rounded-full text-sm tracking-wide mb-6 border border-brand-primary/30 text-white">
+        <div className="absolute z-10 text-center px-4 w-full max-w-4xl mx-auto flex flex-col items-center pt-32 md:pt-16">
+          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="inline-block px-4 py-1.5 bg-brand-primary/20 text-brand-primary-light backdrop-blur-md font-semibold rounded-full text-sm tracking-wide mb-4 border border-brand-primary/30 text-white shadow-sm">
             Premium Services
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight capitalize drop-shadow-lg">
-            Anti Termite Treatment
-          </h1>
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto drop-shadow font-medium leading-relaxed">
-            Professional solutions tailored to protect and prepare your site with the highest safety standards and modern equipment.
-          </p>
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-3xl md:text-5xl lg:text-7xl font-extrabold text-white mb-4 tracking-tight capitalize drop-shadow-lg">
+            Our Professional Services
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-base md:text-xl text-gray-200 max-w-2xl mx-auto drop-shadow font-medium leading-relaxed">
+            Discover our wide range of expert pest management solutions, tailored to protect your property using the highest safety standards and modern equipment.
+          </motion.p>
         </div>
-      </div>
+      </section>
 
       <div className="w-full">
         {/* Service 1 - Image Right, Text Left */}
-        <section className="w-full bg-white py-20 lg:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-12 group">
-            <div className="flex-1 space-y-6">
+        <section className="w-full bg-white py-20 lg:py-24 overflow-hidden">
+          <motion.div 
+            className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-12 group"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div variants={itemVariants} className="flex-1 space-y-6">
               <div className="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary font-semibold rounded-full text-sm tracking-wide">
                 Pest Control
               </div>
@@ -63,30 +96,36 @@ export default function ServicesPage() {
                   <li>In case of poisoning, take remedial measures according to the MSDS provided by the manufacturer and as per IS 4015.</li>
                 </ul>
               </div>
-            </div>
-            <div className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
+            </motion.div>
+            <motion.div variants={itemVariants} className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
               <Image
                 src={service1}
                 alt="Anti Termite Treatment"
                 fill
                 className="object-cover transition-transform duration-700"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </section>
 
         {/* Service 2 - Image Left, Text Right */}
-        <section className="w-full bg-brand-primary/5 py-20 lg:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 group">
-            <div className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
+        <section className="w-full bg-brand-primary/5 py-20 lg:py-24 overflow-hidden">
+          <motion.div 
+            className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 group"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div variants={itemVariants} className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
               <Image
                 src={sitePreparationImg}
                 alt="Site Preparation"
                 fill
                 className="object-cover transition-transform duration-700"
               />
-            </div>
-            <div className="flex-1 space-y-6">
+            </motion.div>
+            <motion.div variants={itemVariants} className="flex-1 space-y-6">
               <div className="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary font-semibold rounded-full text-sm tracking-wide">
                 Site Readiness
               </div>
@@ -101,14 +140,20 @@ export default function ServicesPage() {
                   <li>Complete all cutting, excavation, leveling, and grading before starting the treatment.</li>
                 </ul>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </section>
 
         {/* Service 3 - Image Right, Text Left */}
-        <section className="w-full bg-white py-20 lg:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-12 group">
-            <div className="flex-1 space-y-6">
+        <section className="w-full bg-white py-20 lg:py-24 overflow-hidden">
+          <motion.div 
+            className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-12 group"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div variants={itemVariants} className="flex-1 space-y-6">
               <div className="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary font-semibold rounded-full text-sm tracking-wide">
                 Ground Prep
               </div>
@@ -123,31 +168,37 @@ export default function ServicesPage() {
                   A watering can or an operated compressed air sprayer can be used to ensure even distribution of the chemical emulsion.
                 </p>
               </div>
-            </div>
-            <div className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
+            </motion.div>
+            <motion.div variants={itemVariants} className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
               <Image
                 src={soilTreatmentImg}
                 alt="Soil Treatment"
                 fill
                 className="object-cover transition-transform duration-700"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </section>
 
         {/* Service 4 */}
-        <section className="w-full bg-brand-primary/5 py-20 lg:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 group">
+        <section className="w-full bg-brand-primary/5 py-20 lg:py-24 overflow-hidden">
+          <motion.div 
+            className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 group"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="flex flex-col lg:flex-row items-center gap-12">
-              <div className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
+              <motion.div variants={itemVariants} className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
                 <Image
                   src={service4}
                   alt="Structure Barriers and Chemicals"
                   fill
                   className="object-cover transition-transform duration-700"
                 />
-              </div>
-              <div className="flex-1 space-y-6">
+              </motion.div>
+              <motion.div variants={itemVariants} className="flex-1 space-y-6">
                 <div className="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary font-semibold rounded-full text-sm tracking-wide">
                   Barriers & Materials
                 </div>
@@ -165,25 +216,31 @@ export default function ServicesPage() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
             
-            <div className="bg-white p-8 rounded-2xl border border-brand-border-default shadow-sm w-full">
+            <motion.div variants={itemVariants} className="bg-white p-8 rounded-2xl border border-brand-border-default shadow-sm w-full">
               <h3 className="font-bold text-brand-primary text-2xl mb-4">Chemicals</h3>
               <ul className="list-disc pl-5 space-y-2 text-gray-600 text-lg">
                 <li>Termidor 25 EC (ISI certified).</li>
                 <li>Chemicals approved by the Indian Pest Control Association shall be used.</li>
                 <li>The contractor shall submit purchase vouchers to the EIC for verification.</li>
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </section>
 
         {/* Service 5 */}
-        <section className="w-full bg-white py-20 lg:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 group">
+        <section className="w-full bg-white py-20 lg:py-24 overflow-hidden">
+          <motion.div 
+            className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 group"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-              <div className="flex-1 space-y-6">
+              <motion.div variants={itemVariants} className="flex-1 space-y-6">
                 <div className="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary font-semibold rounded-full text-sm tracking-wide">
                   Advanced Protection
                 </div>
@@ -209,19 +266,19 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
+              </motion.div>
+              <motion.div variants={itemVariants} className="flex-1 w-full relative min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/10 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-3xl">
                 <Image
                   src={service5}
                   alt="Treatment for RCC Foundations & Basement"
                   fill
                   className="object-cover transition-transform duration-700"
                 />
-              </div>
+              </motion.div>
             </div>
 
             <div className="w-full grid md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-2xl border border-brand-border-default shadow-sm">
+              <motion.div variants={itemVariants} className="bg-white p-6 rounded-2xl border border-brand-border-default shadow-sm">
                 <h3 className="font-bold text-brand-primary text-xl mb-4">Top Surface of Plinth Filling</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-600">
                   <li>Consolidated plinth surface shall be treated at 5 Litres/Sq.m before the sub-base is laid.</li>
@@ -233,27 +290,27 @@ export default function ServicesPage() {
                     </ul>
                   </li>
                 </ul>
-              </div>
+              </motion.div>
               
-              <div className="bg-gray-50 p-6 rounded-2xl border border-brand-border-default shadow-sm">
+              <motion.div variants={itemVariants} className="bg-gray-50 p-6 rounded-2xl border border-brand-border-default shadow-sm">
                 <h3 className="font-bold text-brand-primary text-xl mb-4">Mode of Application & Rate</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-600">
                   <li>Chemical emulsion should be applied uniformly by sprayers.</li>
                   <li>Specified rates should be applied at each stage of treatment.</li>
                   <li>Pressure pumps and sprayers of adequate capacity shall be used for proper penetration of the chemical.</li>
                 </ul>
-              </div>
+              </motion.div>
 
-              <div className="bg-white p-6 rounded-2xl border border-brand-border-default shadow-sm">
+              <motion.div variants={itemVariants} className="bg-white p-6 rounded-2xl border border-brand-border-default shadow-sm">
                 <h3 className="font-bold text-brand-primary text-xl mb-4">Treatment for Masonry Foundations</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-600">
                   <li>Foundations shall be completely enveloped with a chemical barrier from the substructure to the plinth surface.</li>
                   <li>Apply emulsion at 5 Litres/Sq.m for normal load-bearing structures.</li>
                   <li>Apply emulsion at 7.50 Litres/Sq.m on vertical surfaces.</li>
                 </ul>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </section>
       </div>
     </div>

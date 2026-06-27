@@ -1,6 +1,6 @@
 export const APP_ROUTES = {
   HOME: '/',
-  PRODUCTS: '/products',
+  SAFETY_INSTRUCTIONS: '/safety-instructions',
   SERVICES: '/services',
   ABOUT: '/about',
   CONTACT: '/contact',

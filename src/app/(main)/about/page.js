@@ -1,47 +1,63 @@
+"use client";
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import FAQ from '../../../components/FAQ';
 import LocationMap from '../../../components/LocationMap';
 import CompanyVision from '../../../components/CompanyVision';
 import CoreValues from '../../../components/CoreValues';
 import about1Image from '../../../assets/about1.webp';
 import heroAbout from '../../../assets/heroabout.webp';
+import heroAboutMobile from '../../../assets/heroaboutmobile.webp';
+
 export default function AboutPage() {
   return (
     <div className="flex-1 w-full bg-brand-bg-main flex flex-col">
       {/* Hero Section */}
       <section className="relative w-full min-h-[500px] flex items-center justify-center pb-16">
         <div className="absolute inset-0 z-0">
-          <Image
-            src={heroAbout}
-            alt="About Professionalz PMS"
-            fill
-            className="object-cover object-center"
-            priority
-            placeholder="blur"
-          />
+          <div className="hidden md:block w-full h-full relative">
+            <Image
+              src={heroAbout}
+              alt="About Professionalz PMS Desktop"
+              fill
+              className="object-cover object-top"
+              priority
+              placeholder="blur"
+            />
+          </div>
+          <div className="block md:hidden w-full h-full relative">
+            <Image
+              src={heroAboutMobile}
+              alt="About Professionalz PMS Mobile"
+              fill
+              className="object-cover object-top"
+              priority
+              placeholder="blur"
+            />
+          </div>
           <div className="absolute inset-0 bg-black/60" />
         </div>
         
         <div className="relative z-10 text-center px-4 pt-28">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
             About Us
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
             Dedicated to providing a safe and healthy environment through expert pest control management.
-          </p>
+          </motion.p>
         </div>
       </section>
 
-      {/* Intro Section - Default Bg */}
-      <section className="w-full py-16">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* Intro Section - White Bg */}
+      <section className="w-full py-8 md:py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Text */}
-            <div className="space-y-4">
+            <div className="space-y-4 animate-fade-in-up">
               <h2 className="text-3xl font-bold text-brand-text-primary">Our Story</h2>
               <p className="text-lg text-brand-text-secondary leading-relaxed">
-                <strong className="text-brand-primary">Professionalz PMS</strong> is one of the fastest growing pest control management company in New Delhi that provides pest control services in Delhi, Noida, Gurgaon, Greater Noida, Manesar, Bhiwadi, Indrapuram, Govindpuram, Dwarka, South Delhi, East Delhi, North Delhi, West Delhi, Ghaziabad, Faridabad and other major cities of Northern India.
+                <strong className="text-brand-primary">Professionalz PMS</strong> is one of the fastest growing pest control management company in Chandigarh that provides pest control services in Chandigarh, Mohali, Kharar, Panchkula, Zirakpur and other major cities of Northern India.
               </p>
               <p className="text-lg text-brand-text-secondary leading-relaxed">
                 We have established our company with a desire to provide a safe and healthy environment to our customers.
@@ -49,12 +65,11 @@ export default function AboutPage() {
             </div>
             
             {/* Right: Image */}
-            <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-lg border border-brand-border-default">
+            <div className="w-full rounded-2xl overflow-hidden shadow-lg border border-brand-border-default animate-fade-in-up delay-300 bg-white">
               <Image 
                 src={about1Image} 
                 alt="About Professionalz PMS" 
-                fill
-                className="object-cover"
+                className="w-full h-auto"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 placeholder="blur"
               />
@@ -63,19 +78,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Vision Section - Fluid Light Bg */}
-      <section className="w-full bg-brand-bg-alt border-y border-brand-border-default overflow-hidden">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* Vision Section - Light Gray Bg */}
+      <section className="w-full bg-slate-50 border-y border-brand-border-default overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <CompanyVision />
         </div>
       </section>
 
-      {/* Services Overview Section - Default Bg */}
-      <section className="w-full py-20">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* Services Overview Section - Light Green Tint Bg */}
+      <section className="w-full py-12 md:py-24 bg-brand-primary/5">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Card 1 */}
-            <div className="relative overflow-hidden bg-white/50 backdrop-blur-md p-10 rounded-[2.5rem] shadow-xl border border-brand-border-default group hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div className="relative overflow-hidden bg-white/50 backdrop-blur-md p-6 md:p-10 rounded-2xl md:rounded-[2.5rem] shadow-xl border border-brand-border-default group hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-brand-primary/20 transition-colors duration-500"></div>
               
               <div className="relative z-10">
@@ -93,7 +108,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 2 */}
-            <div className="relative overflow-hidden bg-white/50 backdrop-blur-md p-10 rounded-[2.5rem] shadow-xl border border-brand-border-default group hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div className="relative overflow-hidden bg-white/50 backdrop-blur-md p-6 md:p-10 rounded-2xl md:rounded-[2.5rem] shadow-xl border border-brand-border-default group hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <div className="absolute bottom-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full -mr-20 -mb-20 blur-3xl group-hover:bg-brand-accent/20 transition-colors duration-500"></div>
               
               <div className="relative z-10">
@@ -113,16 +128,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Values Section - Default Bg (the component itself is dark) */}
-      <section className="w-full">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* Core Values Section - White Bg */}
+      <section className="w-full bg-white">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <CoreValues />
         </div>
       </section>
 
-      {/* FAQ Section - Fluid Light Bg */}
-      <section className="w-full bg-brand-bg-alt border-t border-brand-border-default py-20">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* FAQ Section - Light Gray Bg */}
+      <section className="w-full bg-slate-50 border-t border-brand-border-default py-8 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <FAQ />
         </div>
       </section>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { APP_ROUTES } from '../config/routes';
 
 export default function CTA() {
   return (
@@ -35,10 +36,10 @@ export default function CTA() {
               <ArrowRight size={20} className="ml-2" />
             </Link>
             <Link 
-              href="/products"
+              href={APP_ROUTES.SERVICES}
               className="w-full sm:w-64 inline-flex items-center justify-center px-8 py-4 rounded-full bg-transparent border-2 border-white/30 text-white font-bold text-lg hover:bg-white/10 hover:border-white transition-all duration-300 cursor-pointer"
             >
-              Browse catalog
+              Browse Services
             </Link>
           </div>
         </div>

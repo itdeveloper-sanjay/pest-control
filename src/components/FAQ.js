@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
@@ -21,8 +22,10 @@ const faqs = [
   }
 ];
 
-export default function FAQ() {
+export default function FAQ({ faqData }) {
   const [openIndex, setOpenIndex] = useState(null);
+  
+  const displayFaqs = faqData || faqs;
 
   const toggleFAQ = (index) => {
     if (openIndex === index) {
@@ -33,43 +36,53 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 px-4 md:px-8 max-w-5xl mx-auto w-full">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-extrabold text-brand-text-primary mb-4">Frequently Asked Questions</h2>
-        <p className="text-brand-text-secondary text-lg">Have questions? We're here to help.</p>
+    <section className="py-8 md:py-12 px-4 md:px-8 max-w-4xl mx-auto w-full">
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center justify-center p-3 bg-brand-primary/10 rounded-2xl mb-4 shadow-sm">
+          <MessageCircleQuestion size={32} className="text-brand-primary" />
+        </div>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-brand-text-primary mb-4 tracking-tight">Frequently Asked Questions</h2>
+        <p className="text-brand-text-secondary text-lg max-w-2xl mx-auto">Find answers to common questions about our services, safety measures, and pest control methods.</p>
       </div>
       
       <div className="flex flex-col gap-4">
-        {faqs.map((faq, index) => {
+        {displayFaqs.map((faq, index) => {
           const isOpen = openIndex === index;
           return (
             <div 
               key={index} 
-              className={`border rounded-xl transition-all duration-300 overflow-hidden ${
-                isOpen ? 'border-brand-primary bg-brand-bg-alt shadow-sm' : 'border-brand-border-default bg-white hover:border-brand-border-hover'
+              className={`border-2 rounded-2xl transition-all duration-300 overflow-hidden bg-white group ${
+                isOpen ? 'border-brand-primary shadow-lg shadow-brand-primary/10' : 'border-brand-border-default hover:border-brand-primary/40 hover:shadow-md'
               }`}
             >
               <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none cursor-pointer"
+                className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none cursor-pointer"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className={`font-semibold text-lg pr-4 ${isOpen ? 'text-brand-primary' : 'text-brand-text-primary'}`}>
-                  {faq.question}
+                <span className={`font-bold text-lg pr-4 transition-colors duration-300 ${isOpen ? 'text-brand-primary' : 'text-brand-text-primary group-hover:text-brand-primary'}`}>
+                  {faq.question || faq.q}
                 </span>
-                <span className={`flex-shrink-0 transition-transform duration-300 ${isOpen ? 'text-brand-primary' : 'text-brand-text-secondary'}`}>
-                  {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
-                </span>
+                <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-brand-primary text-white rotate-180' : 'bg-brand-primary/5 text-brand-primary group-hover:bg-brand-primary/10'}`}>
+                  <ChevronDown size={20} className="transition-transform duration-300" />
+                </div>
               </button>
               
-              <div 
-                className={`transition-all duration-300 ease-in-out ${
-                  isOpen ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 overflow-hidden'
-                }`}
-              >
-                <div className="px-6 text-brand-text-secondary leading-relaxed">
-                  {faq.answer}
-                </div>
-              </div>
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div 
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    <div className="px-6 pb-6 pt-2">
+                      <div className="pl-4 border-l-4 border-brand-accent/50 text-brand-text-secondary text-[1.05rem] leading-relaxed">
+                        {faq.answer || faq.a}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           );
         })}
