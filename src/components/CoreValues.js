@@ -82,7 +82,7 @@ export default function CoreValues() {
 
         {/* Right Side Grid */}
         <motion.div 
-          className="lg:w-1/2 w-full grid sm:grid-cols-2 gap-5 lg:gap-6"
+          className="lg:w-1/2 w-full grid grid-cols-2 gap-3 sm:gap-5 lg:gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -92,20 +92,20 @@ export default function CoreValues() {
             <motion.div 
               key={idx} 
               variants={itemVariants}
-              className="bg-white p-6 rounded-3xl border border-transparent hover:border-brand-primary/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between h-full"
+              className="bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl border border-transparent hover:border-brand-primary/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:-translate-y-1 md:hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden flex flex-col justify-start h-full"
             >
               {/* Animated top line on hover */}
-              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-primary to-brand-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              <div className="absolute top-0 inset-x-0 h-1 md:h-1.5 bg-gradient-to-r from-brand-primary to-brand-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               
-              <div className="bg-brand-primary/5 w-14 h-14 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-primary transition-colors duration-500 shadow-inner">
-                <div className="text-brand-primary group-hover:text-white transition-colors duration-500 group-hover:scale-110 transform">
+              <div className="bg-brand-primary/5 w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-5 group-hover:bg-brand-primary transition-colors duration-500 shadow-inner shrink-0">
+                <div className="text-brand-primary group-hover:text-white transition-colors duration-500 group-hover:scale-110 transform [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-7 md:[&>svg]:h-7">
                   {val.icon}
                 </div>
               </div>
               
               <div>
-                <h3 className="text-xl font-extrabold text-brand-text-primary mb-2 group-hover:text-brand-primary transition-colors">{val.title}</h3>
-                <p className="text-brand-text-secondary text-sm leading-relaxed">
+                <h3 className="text-sm sm:text-base md:text-xl font-extrabold text-brand-text-primary mb-1 md:mb-2 group-hover:text-brand-primary transition-colors leading-tight">{val.title}</h3>
+                <p className="text-brand-text-secondary text-xs sm:text-sm leading-relaxed">
                   {val.description}
                 </p>
               </div>

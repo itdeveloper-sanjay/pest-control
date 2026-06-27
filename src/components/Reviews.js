@@ -1,6 +1,6 @@
 'use client';
 import { Star } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const reviews = [
   {
@@ -30,6 +30,16 @@ const allReviews = [...reviews, ...reviews];
 
 export default function Reviews() {
   const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft } = scrollRef.current;
+    const itemWidth = scrollRef.current.children[0].offsetWidth + 24; // Width + gap
+    let index = Math.round(scrollLeft / itemWidth);
+    index = index % reviews.length;
+    setActiveIndex(index);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -56,7 +66,7 @@ export default function Reviews() {
           }
         });
       }
-    }, 6000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -79,7 +89,8 @@ export default function Reviews() {
 
       <div 
         ref={scrollRef}
-        className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+        onScroll={handleScroll}
+        className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
       >
         {allReviews.map((review, index) => (
           <div 
@@ -106,6 +117,17 @@ export default function Reviews() {
               </div>
             </div>
           </div>
+        ))}
+      </div>
+      </div>
+      
+      {/* Pagination Dots (Mobile Only) */}
+      <div className="flex md:hidden justify-center items-center gap-2 mt-4">
+        {reviews.map((_, i) => (
+          <div 
+            key={i} 
+            className={`h-2 rounded-full transition-all duration-300 ${activeIndex === i ? 'w-6 bg-brand-primary' : 'w-2 bg-brand-primary/20'}`}
+          />
         ))}
       </div>
       </div>
