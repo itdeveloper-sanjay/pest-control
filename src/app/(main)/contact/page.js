@@ -9,7 +9,7 @@ import heroContact from '../../../assets/herocontact.webp';
 import heroContactMobile from '../../../assets/herocontactmobile.webp';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [status, setStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus({ type: 'success', message: 'Message sent successfully! We will get back to you soon.' });
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
         setStatus({ type: 'error', message: data.error || 'Failed to send message.' });
       }
@@ -186,6 +186,17 @@ export default function ContactPage() {
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" 
                   placeholder="you@example.com" 
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-brand-text-primary mb-1">Phone Number</label>
+                <input 
+                  type="tel" 
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" 
+                  placeholder="Your Mobile Number" 
                 />
               </div>
               <div>
