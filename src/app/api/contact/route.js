@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { siteData } from '@/config/siteData';
+import connectToDatabase from '@/lib/mongoose';
+import Contact from '@/models/Contact';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -10,6 +12,16 @@ export async function POST(request) {
 
     if (!name || !email || !phone || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    try {
+      await connectToDatabase();
+      await Contact.create({ name, email, phone, message });
+    } catch (dbError) {
+      console.error('Database Error:', dbError);
+      // Even if DB fails, we can optionally proceed to send the email, 
+      // but returning an error might be safer if DB storage is mandatory.
+      // return NextResponse.json({ error: 'Failed to save to database' }, { status: 500 });
     }
 
     const { data, error } = await resend.emails.send({

@@ -157,16 +157,32 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-sm border border-brand-border-default space-y-5 animate-fade-in-up delay-[500ms]">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-brand-border-default animate-fade-in-up delay-[500ms]">
               <h2 className="text-2xl font-bold text-brand-text-primary mb-4">Send a Message</h2>
               
-              {status.message && (
-                <div className={`p-4 rounded-md text-sm font-medium ${status.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
-                  {status.message}
+              {status.type === 'success' ? (
+                <div className="flex flex-col items-center justify-center py-10 space-y-4">
+                  <div className="bg-green-100 p-4 rounded-full">
+                    <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">Thank You!</h3>
+                  <p className="text-center text-gray-600">{status.message}</p>
+                  <button 
+                    onClick={() => setStatus({type: '', message: ''})} 
+                    className="mt-6 px-6 py-2 border-2 border-brand-primary text-brand-primary rounded-md font-bold hover:bg-brand-primary hover:text-white transition-colors cursor-pointer"
+                  >
+                    Send Another Message
+                  </button>
                 </div>
-              )}
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {status.message && (
+                    <div className="p-4 rounded-md text-sm font-medium bg-red-50 text-red-800 border border-red-200">
+                      {status.message}
+                    </div>
+                  )}
 
-              <div>
+                  <div>
                 <label className="block text-sm font-medium text-brand-text-primary mb-1">Name</label>
                 <input 
                   type="text" 
@@ -193,10 +209,13 @@ export default function ContactPage() {
                 <input 
                   type="tel" 
                   required
+                  pattern="[0-9]{10}"
+                  maxLength="10"
+                  title="Please enter exactly 10 digits"
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value.replace(/\D/g, '')})}
                   className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" 
-                  placeholder="Your Mobile Number" 
+                  placeholder="Your Mobile Number (10 digits)" 
                 />
               </div>
               <div>
@@ -224,7 +243,9 @@ export default function ContactPage() {
                   'Send Message'
                 )}
               </button>
-            </form>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
