@@ -1,4 +1,5 @@
 "use client";
+import { useState } from 'react';
 import LocationMap from '../../../components/LocationMap';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, MessageCircle, Clock, Building } from 'lucide-react';
@@ -8,6 +9,37 @@ import heroContact from '../../../assets/herocontact.webp';
 import heroContactMobile from '../../../assets/herocontactmobile.webp';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState({ type: '', message: '' });
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({ type: 'success', message: 'Message sent successfully! We will get back to you soon.' });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus({ type: 'error', message: data.error || 'Failed to send message.' });
+      }
+    } catch (error) {
+      setStatus({ type: 'error', message: 'An unexpected error occurred. Please try again.' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="flex-1 w-full bg-brand-bg-main flex flex-col">
       {/* Hero Section */}
@@ -125,22 +157,61 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <form className="bg-white p-8 rounded-2xl shadow-sm border border-brand-border-default space-y-5 animate-fade-in-up delay-[500ms]">
+            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-sm border border-brand-border-default space-y-5 animate-fade-in-up delay-[500ms]">
               <h2 className="text-2xl font-bold text-brand-text-primary mb-4">Send a Message</h2>
+              
+              {status.message && (
+                <div className={`p-4 rounded-md text-sm font-medium ${status.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+                  {status.message}
+                </div>
+              )}
+
               <div>
                 <label className="block text-sm font-medium text-brand-text-primary mb-1">Name</label>
-                <input type="text" className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" placeholder="Your Name" />
+                <input 
+                  type="text" 
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" 
+                  placeholder="Your Name" 
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-brand-text-primary mb-1">Email</label>
-                <input type="email" className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" placeholder="you@example.com" />
+                <input 
+                  type="email" 
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" 
+                  placeholder="you@example.com" 
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-brand-text-primary mb-1">Message</label>
-                <textarea rows="5" className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" placeholder="How can we help you?"></textarea>
+                <textarea 
+                  rows="5" 
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  className="w-full border border-brand-border-default rounded-md p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary bg-brand-bg-main" 
+                  placeholder="How can we help you?"
+                ></textarea>
               </div>
-              <button type="button" className="bg-brand-primary text-white px-8 py-3 rounded-md hover:bg-brand-primary-hover transition-colors font-bold w-full shadow-md mt-2 cursor-pointer">
-                Send Message
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="bg-brand-primary text-white px-8 py-3 rounded-md hover:bg-brand-primary-hover transition-colors font-bold w-full shadow-md mt-2 cursor-pointer disabled:opacity-70 flex justify-center items-center"
+              >
+                {loading ? (
+                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </div>
