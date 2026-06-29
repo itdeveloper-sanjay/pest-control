@@ -8,15 +8,27 @@ export async function GET(request) {
     const page = parseInt(searchParams.get('page')) || 1;
     const limit = parseInt(searchParams.get('limit')) || 10;
     const skip = (page - 1) * limit;
+    const status = searchParams.get('status');
 
     await connectToDatabase();
 
-    const messages = await Contact.find({})
+    const query = {};
+    if (status === 'pending') {
+      query.$or = [
+        { status: 'pending' },
+        { status: { $exists: false } },
+        { status: null }
+      ];
+    } else if (status === 'addressed') {
+      query.status = 'addressed';
+    }
+
+    const messages = await Contact.find(query)
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit);
 
-    const total = await Contact.countDocuments();
+    const total = await Contact.countDocuments(query);
 
     return NextResponse.json({
       messages,
