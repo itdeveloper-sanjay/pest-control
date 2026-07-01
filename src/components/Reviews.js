@@ -79,8 +79,8 @@ export default function Reviews() {
           <div className="w-1.5 h-1.5 rounded-full bg-brand-accent mr-2"></div>
           <span className="text-xs font-bold tracking-wider text-brand-primary uppercase">Customer Stories</span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-brand-text-primary mb-6 tracking-tight">
-          Trusted by families and businesses across Mohali/Chandigarh
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-text-primary mb-6 tracking-tight">
+          Trusted by families and businesses across Tricity
         </h2>
         <p className="text-lg text-brand-text-secondary max-w-2xl mx-auto">
           Real results from the customers who rely on Professionalz PMS for a pest-free environment.

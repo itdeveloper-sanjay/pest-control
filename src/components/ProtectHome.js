@@ -24,8 +24,8 @@ export default function ProtectHome() {
         </div>
 
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-brand-primary mb-6 md:mb-16 max-w-3xl tracking-tight leading-tight">
-          Protecting your home with expert pest control
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary mb-6 md:mb-16 max-w-3xl tracking-tight leading-tight">
+          Protecting your home with expert pest management solution
         </h2>
 
         {/* Insects Container */}
@@ -39,7 +39,7 @@ export default function ProtectHome() {
               animation: marquee 20s linear infinite;
             }
           `}</style>
-          
+
           {/* Desktop View (One Line) */}
           <div className="hidden md:flex justify-between items-center gap-4 lg:gap-8 w-full">
             {pests.map((pest, index) => (

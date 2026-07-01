@@ -1,6 +1,8 @@
 "use client";
-import { ShieldAlert, Info, AlertTriangle, Droplet, Wind, HandMetal } from 'lucide-react';
+import { ShieldAlert, Info, AlertTriangle, Droplet, Wind, HandMetal, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { APP_ROUTES } from '../config/routes';
 
 export default function ImportantGuidelines() {
   const safetyRules = [
@@ -62,10 +64,17 @@ export default function ImportantGuidelines() {
           <ShieldAlert className="text-brand-primary" size={18} />
           <span className="text-sm font-bold text-brand-primary tracking-wide uppercase">Safety First</span>
         </div>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-brand-text-primary mb-6 leading-tight">Important Guidelines</h2>
-        <p className="text-brand-text-secondary text-lg max-w-2xl mx-auto leading-relaxed">
+        <h2 className="text-2xl md:text-4xl font-bold text-brand-text-primary mb-6 leading-tight">Important Guidelines</h2>
+        <p className="text-brand-text-secondary text-lg max-w-2xl mx-auto leading-relaxed mb-8">
           Our chemicals are highly effective against pests but require careful handling. Strict adherence to these rules is mandatory to ensure the safety of your family and pets.
         </p>
+        <Link 
+          href={APP_ROUTES.SAFETY_INSTRUCTIONS}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-primary-hover shadow-lg hover:shadow-[0_10px_20px_rgba(46,125,50,0.3)] transition-all duration-300 group hover:-translate-y-1"
+        >
+          View All Safety Instructions
+          <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+        </Link>
       </motion.div>
 
       <motion.div 

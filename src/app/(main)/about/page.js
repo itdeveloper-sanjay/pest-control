@@ -39,7 +39,7 @@ export default function AboutPage() {
         </div>
         
         <div className="relative z-10 text-center px-4 pt-28">
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow">
             About Us
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
@@ -95,7 +95,7 @@ export default function AboutPage() {
               
               <div className="relative z-10">
                 <div className="w-16 h-2 bg-gradient-to-r from-brand-primary to-brand-accent rounded-full mb-6"></div>
-                <h3 className="text-3xl font-extrabold text-brand-text-primary mb-6 tracking-tight">Commercial & Residential Pest Control</h3>
+                <h3 className="text-3xl font-bold text-brand-text-primary mb-6 tracking-tight">Commercial & Residential Pest Control</h3>
                 <div className="space-y-4">
                   <p className="text-brand-text-secondary text-lg leading-relaxed">
                     We at <strong className="text-brand-primary">Professionalz PMS</strong> are providing pest control management services to both residential and commercial properties. We are backed by a dedicated team of highly qualified and professionally trained personnel. We ensure for delivering highest level of service and quality products in order to provide healthy and safe environments to your commercial or residential premises.
@@ -113,7 +113,7 @@ export default function AboutPage() {
               
               <div className="relative z-10">
                 <div className="w-16 h-2 bg-gradient-to-r from-brand-accent to-brand-primary rounded-full mb-6"></div>
-                <h3 className="text-3xl font-extrabold text-brand-text-primary mb-6 tracking-tight">Termite & Cockroach Control</h3>
+                <h3 className="text-3xl font-bold text-brand-text-primary mb-6 tracking-tight">Termite & Cockroach Control</h3>
                 <div className="space-y-4">
                   <p className="text-brand-text-secondary text-lg leading-relaxed">
                     We can help you to get rid of all kinds of pests such as termite, wood borer, cockroaches, rodents (rats), mosquitoes, crickets, wasps, spiders, ants, flies, bed bugs, etc. Our pest control and pest control management services are accepted and appreciated by lots of people, thanks to their understanding and having trust with our quality products and services.

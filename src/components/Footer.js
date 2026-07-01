@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="flex flex-col items-start gap-4">
             <Link href={APP_ROUTES.HOME}>
               <Image
-                src="/logo.png"
+                src="/brand-logo.png"
                 alt="Logo"
                 width={160}
                 height={50}

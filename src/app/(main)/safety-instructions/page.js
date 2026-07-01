@@ -87,10 +87,10 @@ export default function AquaKOthrinePage() {
             <ShieldAlert size={16} className="mr-2" />
             Important Guidelines
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight drop-shadow-2xl">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight drop-shadow-md">
             Safety Instructions & Information
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto drop-shadow">
             Your well-being is our top priority. Explore our safety guidelines and discover the advanced, eco-friendly technologies we use to keep your environment completely secure.
           </motion.p>
         </div>
@@ -120,7 +120,7 @@ export default function AquaKOthrinePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-text-primary mb-6 tracking-tight drop-shadow-sm"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text-primary mb-6 tracking-tight drop-shadow-sm"
           >
             Aqua <span className="text-brand-primary relative inline-block">K-Othrine<span className="absolute bottom-1 left-0 w-full h-3 bg-brand-accent/30 -z-10 -rotate-1"></span></span> Technology
           </motion.h2>
@@ -142,7 +142,7 @@ export default function AquaKOthrinePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-brand-text-primary mb-6">What is Aqua K-Othrine?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-text-primary mb-6">What is Aqua K-Othrine?</h2>
               <p className="text-lg text-brand-text-secondary leading-relaxed mb-6">
                 Aqua K-Othrine is a professional-grade water-based space spray formulation used for controlling adult mosquitoes in residential, commercial, industrial, and public environments.
               </p>
@@ -177,7 +177,7 @@ export default function AquaKOthrinePage() {
             </div>
             <div className="lg:w-1/2">
               <div className="inline-block px-4 py-1.5 bg-white text-brand-primary font-bold rounded-full text-sm mb-4 border border-brand-primary/20 shadow-sm">Cleaner & Safer</div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-brand-text-primary mb-6">Why We Use Aqua K-Othrine</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-text-primary mb-6">Why We Use Aqua K-Othrine</h2>
               <p className="text-lg text-brand-text-secondary leading-relaxed mb-8">
                 Traditional solvent-based insecticides often produce strong odours and may leave stains. Aqua K-Othrine offers a cleaner, safer, and more environmentally responsible alternative without compromising performance.
               </p>
@@ -204,7 +204,7 @@ export default function AquaKOthrinePage() {
       <section className="w-full bg-white py-20 border-y border-brand-border-default">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-brand-text-primary mb-6">Film Forming Aqueous Spray Technology (FFAST)</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-brand-text-primary mb-6">Film Forming Aqueous Spray Technology (FFAST)</h2>
             <p className="text-lg text-brand-text-secondary max-w-3xl mx-auto leading-relaxed mb-12">
               Aqua K-Othrine uses FFAST. This technology creates a thin protective film around spray droplets, reducing evaporation and allowing droplets to remain airborne for a longer period. More flying mosquitoes come into contact with the insecticide, improving treatment effectiveness.
             </p>
@@ -242,7 +242,7 @@ export default function AquaKOthrinePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-extrabold text-brand-text-primary mb-4">Key Benefits</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-brand-text-primary mb-4">Key Benefits</h2>
               <div className="w-24 h-1.5 bg-brand-primary mx-auto rounded-full"></div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -251,7 +251,7 @@ export default function AquaKOthrinePage() {
                   <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-6 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-extrabold text-brand-text-primary mb-3">{benefit.title}</h3>
+                  <h3 className="text-xl font-bold text-brand-text-primary mb-3">{benefit.title}</h3>
                   <p className="text-brand-text-secondary leading-relaxed">{benefit.desc}</p>
                 </motion.div>
               ))}
@@ -265,7 +265,7 @@ export default function AquaKOthrinePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col lg:flex-row items-stretch gap-10">
             <div className="lg:w-7/12">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-brand-text-primary mb-6">Optimal Application Timing</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-text-primary mb-6">Optimal Application Timing</h2>
               <p className="text-lg text-brand-text-secondary mb-8">
                 Mosquito control is most effective when insects are naturally active and flying. Applying treatment during these periods increases contact between airborne droplets and mosquitoes.
               </p>
@@ -310,7 +310,7 @@ export default function AquaKOthrinePage() {
           <div className="grid lg:grid-cols-2 gap-10">
             <motion.div variants={itemVariants} className="bg-brand-primary text-white rounded-[3rem] p-10 md:p-12 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-              <h2 className="text-3xl font-extrabold mb-6 relative z-10">Professional Application Methods</h2>
+              <h2 className="text-3xl font-bold mb-6 relative z-10">Professional Application Methods</h2>
               <p className="text-white/80 text-lg mb-8 relative z-10">Our trained technicians use specialized equipment to ensure uniform droplet size, better coverage, and maximum treatment efficiency.</p>
               <div className="flex flex-wrap gap-3 relative z-10">
                 {applicationMethods.map((method, i) => (
@@ -320,7 +320,7 @@ export default function AquaKOthrinePage() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="bg-slate-50 rounded-[3rem] p-10 md:p-12 shadow-sm border border-brand-border-default">
-              <h2 className="text-3xl font-extrabold text-brand-text-primary mb-8">Why Choose This Solution?</h2>
+              <h2 className="text-3xl font-bold text-brand-text-primary mb-8">Why Choose This Solution?</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {whyChooseUs.map((reason, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -341,7 +341,7 @@ export default function AquaKOthrinePage() {
             <div className="bg-amber-50 rounded-[3rem] p-10 md:p-16 border-2 border-amber-200 shadow-sm relative overflow-hidden">
               <AlertTriangle className="absolute -bottom-10 -right-10 text-amber-500/10" size={300} />
               <div className="relative z-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-amber-900 mb-6 flex items-center gap-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-6 flex items-center gap-4">
                   <ShieldAlert className="text-amber-600" size={40} />
                   Safety & Precautions
                 </h2>

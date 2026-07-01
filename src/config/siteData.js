@@ -1,7 +1,7 @@
 export const siteData = {
   contact: {
-    phone: "+91 98787 56677",
-    email: "info@professionalzpms.in",
+    phone: "+91 8810664498",
+    email: "Professionalzpms2026@gmail.com",
     address: {
       street: "Shop no 5, near guga madi mandir",
       city: "SAS Nagar/Mohali",
@@ -13,8 +13,8 @@ export const siteData = {
     }
   },
   social: {
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
-    youtube: "https://youtube.com"
+    facebook:  "https://www.facebook.com/professionalzpms2026/",
+    instagram: "https://www.instagram.com/professionalzpms2026/",
+    youtube:   "https://www.youtube.com/@ProfessionalzPMS-2026"
   }
 };

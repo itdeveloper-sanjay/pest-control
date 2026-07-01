@@ -41,7 +41,7 @@ export default function FAQ({ faqData }) {
         <div className="inline-flex items-center justify-center p-3 bg-brand-primary/10 rounded-2xl mb-4 shadow-sm">
           <MessageCircleQuestion size={32} className="text-brand-primary" />
         </div>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-brand-text-primary mb-4 tracking-tight">Frequently Asked Questions</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-brand-text-primary mb-4 tracking-tight">Frequently Asked Questions</h2>
         <p className="text-brand-text-secondary text-lg max-w-2xl mx-auto">Find answers to common questions about our services, safety measures, and pest control methods.</p>
       </div>
       

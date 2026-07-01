@@ -10,6 +10,7 @@ import FAQ from '../../components/FAQ';
 import ProtectHome from '../../components/ProtectHome';
 
 import ImportantGuidelines from '../../components/ImportantGuidelines';
+import HomeAbout from '../../components/HomeAbout';
 
 export default function Home() {
   const containerVariants = {
@@ -52,15 +53,17 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-white max-w-4xl mx-auto flex flex-col items-center pt-28 px-4">
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 md:mb-6 leading-tight drop-shadow-lg text-center">
-            Complete Pest Control Solutions
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight drop-shadow text-center">
+            Complete Pest Management Solutions
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-base sm:text-lg md:text-2xl max-w-2xl mx-auto mb-8 md:mb-10 text-gray-200 drop-shadow font-medium text-center">
-            Protect your home and business with our expert pest management services. We provide safe, eco-friendly, and effective treatments across Mohali/Chandigarh.
+            Protect your home and business with our expert pest management services. We provide safe, eco-friendly, and effective treatments across Tricity.
           </motion.p>
 
         </div>
       </section>
+
+      <HomeAbout />
 
       <section className="py-24 px-4 sm:px-6 lg:px-8 w-full bg-white">
         <div className="max-w-7xl mx-auto">
@@ -74,7 +77,7 @@ export default function Home() {
             <div className="inline-flex items-center px-4 py-1.5 bg-white border border-brand-primary/20 rounded-full mb-4 shadow-sm">
               <span className="text-sm font-bold text-brand-primary tracking-wider uppercase">Our Advantage</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-brand-text-primary mb-6">Why Choose Our Services?</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-brand-text-primary mb-6">Why Choose Our Services?</h2>
             <p className="text-lg text-brand-text-secondary max-w-2xl mx-auto leading-relaxed">
               We go beyond basic pest control by offering comprehensive, safe, and expert-driven solutions tailored for your peace of mind.
             </p>
@@ -92,7 +95,7 @@ export default function Home() {
               <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-primary/5 rounded-full flex items-center justify-center mb-5 md:mb-8 group-hover:bg-brand-primary transition-colors duration-500 shadow-inner">
                 <ShieldCheck className="w-8 h-8 md:w-10 md:h-10 text-brand-primary group-hover:text-white transition-colors duration-500" />
               </div>
-              <h3 className="text-xl md:text-2xl font-extrabold mb-3 md:mb-4 text-brand-text-primary">Total Eradication</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-brand-text-primary">Total Eradication</h3>
               <p className="text-brand-text-secondary text-base md:text-lg leading-relaxed">Explore our advanced pest control solutions that completely eliminate termites, cockroaches, and other pests from your property.</p>
             </motion.div>
 
@@ -101,7 +104,7 @@ export default function Home() {
               <div className="w-16 h-16 md:w-20 md:h-20 bg-[#25D366]/5 rounded-full flex items-center justify-center mb-5 md:mb-8 group-hover:bg-[#25D366] transition-colors duration-500 shadow-inner">
                 <Leaf className="w-8 h-8 md:w-10 md:h-10 text-[#25D366] group-hover:text-white transition-colors duration-500" />
               </div>
-              <h3 className="text-xl md:text-2xl font-extrabold mb-3 md:mb-4 text-brand-text-primary">Eco-Friendly</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-brand-text-primary">Eco-Friendly</h3>
               <p className="text-brand-text-secondary text-base md:text-lg leading-relaxed">We use safe, eco-friendly products to manage pests, ensuring the health and safety of your family and pets.</p>
             </motion.div>
 
@@ -110,7 +113,7 @@ export default function Home() {
               <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-accent/10 rounded-full flex items-center justify-center mb-5 md:mb-8 group-hover:bg-brand-accent transition-colors duration-500 shadow-inner">
                 <Award className="w-8 h-8 md:w-10 md:h-10 text-brand-accent group-hover:text-white transition-colors duration-500" />
               </div>
-              <h3 className="text-xl md:text-2xl font-extrabold mb-3 md:mb-4 text-brand-text-primary">Certified Experts</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-brand-text-primary">Certified Experts</h3>
               <p className="text-brand-text-secondary text-base md:text-lg leading-relaxed">Rely on our team of highly qualified and professionally trained personnel for reliable, year-round pest protection.</p>
             </motion.div>
           </motion.div>

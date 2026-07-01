@@ -6,9 +6,9 @@ export default function NotFound() {
     <div className="flex-1 flex flex-col items-center justify-center min-h-[80vh] bg-brand-bg-main px-4 text-center py-20">
       <div className="bg-white p-10 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-brand-primary/10 border border-brand-border-default max-w-2xl w-full mx-auto transform transition-all hover:scale-[1.02] duration-500">
         <div className="relative inline-block mb-6">
-          <h1 className="text-8xl md:text-[9rem] font-black text-brand-primary/10 select-none">404</h1>
+          <h1 className="text-6xl md:text-7xl font-bold text-brand-primary/10 select-none">404</h1>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-4xl md:text-6xl font-extrabold text-brand-primary drop-shadow-sm">Oops!</span>
+            <span className="text-4xl md:text-6xl font-bold text-brand-primary drop-shadow-sm">Oops!</span>
           </div>
         </div>
         

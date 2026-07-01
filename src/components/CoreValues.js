@@ -60,7 +60,7 @@ export default function CoreValues() {
             <span className="text-sm font-bold text-brand-primary tracking-wide uppercase">Why Choose Us</span>
           </motion.div>
           
-          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-extrabold text-brand-text-primary mb-6 leading-[1.2] tracking-tight">
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-brand-text-primary mb-6 leading-[1.2] tracking-tight">
             Exceptional quality, unmatched reliability
           </motion.h2>
           
@@ -104,7 +104,7 @@ export default function CoreValues() {
               </div>
               
               <div>
-                <h3 className="text-sm sm:text-base md:text-xl font-extrabold text-brand-text-primary mb-1 md:mb-2 group-hover:text-brand-primary transition-colors leading-tight">{val.title}</h3>
+                <h3 className="text-sm sm:text-base md:text-xl font-bold text-brand-text-primary mb-1 md:mb-2 group-hover:text-brand-primary transition-colors leading-tight">{val.title}</h3>
                 <p className="text-brand-text-secondary text-xs sm:text-sm leading-relaxed">
                   {val.description}
                 </p>

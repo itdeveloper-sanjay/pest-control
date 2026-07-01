@@ -99,7 +99,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-border-default flex flex-col justify-center items-start">
           <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Total {filter !== 'all' ? filter : ''} Leads</h3>
-          <p className="text-4xl font-extrabold text-brand-primary">{loading ? '...' : totalMessages}</p>
+          <p className="text-4xl font-bold text-brand-primary">{loading ? '...' : totalMessages}</p>
         </div>
       </div>
 

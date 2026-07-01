@@ -41,7 +41,7 @@ export default function CompanyVision() {
           </div>
         </motion.div>
 
-        <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 md:mb-8 tracking-tight drop-shadow-lg">
+        <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 tracking-tight drop-shadow">
           Company's <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-yellow-300">Vision</span>
         </motion.h2>
 
@@ -63,7 +63,7 @@ export default function CompanyVision() {
             <div className="bg-brand-accent/20 group-hover:bg-brand-accent transition-colors duration-500 w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-inner">
               <Lightbulb className="text-brand-accent group-hover:text-brand-text-primary transition-colors duration-500 w-8 h-8 md:w-9 md:h-9" />
             </div>
-            <h4 className="font-extrabold text-lg md:text-2xl text-white mb-1 md:mb-2 text-center">Latest Technology</h4>
+            <h4 className="font-bold text-lg md:text-2xl text-white mb-1 md:mb-2 text-center">Latest Technology</h4>
             <p className="text-white/70 text-xs md:text-sm font-medium text-center">State-of-the-art solutions</p>
           </motion.div>
 
@@ -71,7 +71,7 @@ export default function CompanyVision() {
             <div className="bg-brand-accent/20 group-hover:bg-brand-accent transition-colors duration-500 w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-inner">
               <Users className="text-brand-accent group-hover:text-brand-text-primary transition-colors duration-500 w-8 h-8 md:w-9 md:h-9" />
             </div>
-            <h4 className="font-extrabold text-lg md:text-2xl text-white mb-1 md:mb-2 text-center">Win-Win Relationships</h4>
+            <h4 className="font-bold text-lg md:text-2xl text-white mb-1 md:mb-2 text-center">Win-Win Relationships</h4>
             <p className="text-white/70 text-xs md:text-sm font-medium text-center">Trust and commitment</p>
           </motion.div>
 
@@ -79,7 +79,7 @@ export default function CompanyVision() {
             <div className="bg-brand-accent/20 group-hover:bg-brand-accent transition-colors duration-500 w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-inner">
               <TrendingUp className="text-brand-accent group-hover:text-brand-text-primary transition-colors duration-500 w-8 h-8 md:w-9 md:h-9" />
             </div>
-            <h4 className="font-extrabold text-lg md:text-2xl text-white mb-1 md:mb-2 text-center">Top-Notch Position</h4>
+            <h4 className="font-bold text-lg md:text-2xl text-white mb-1 md:mb-2 text-center">Top-Notch Position</h4>
             <p className="text-white/70 text-xs md:text-sm font-medium text-center">Industry leadership</p>
           </motion.div>
         </motion.div>
