@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronRight, CheckCircle2, PhoneCall, ArrowLeft } from 'lucide-react';
+import { ChevronRight, CheckCircle2, PhoneCall, MessageCircle } from 'lucide-react';
 import { servicesData } from '@/config/servicesData';
 import { siteData } from '@/config/siteData';
 
@@ -29,7 +29,7 @@ export default async function ServicePage({ params }) {
   return (
     <div className="flex-1 w-full bg-slate-50 min-h-screen pb-20">
       {/* Dynamic Hero Section */}
-      <section className="relative w-full py-24 md:py-40 bg-gray-900 overflow-hidden">
+      <section className="relative w-full min-h-[450px] md:min-h-[500px] flex items-center justify-center bg-gray-900 overflow-hidden pt-24 md:pt-32 pb-16">
         {/* Background Images */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -76,39 +76,41 @@ export default async function ServicePage({ params }) {
       </div>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="grid lg:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-16">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-10 items-start">
           
           {/* Left Column: Rich Details & Placeholders */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-100">
+            <div className="bg-white p-5 sm:p-8 lg:p-10 rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
               {service.content}
             </div>
           </div>
 
           {/* Right Column: Sidebar (CTA) */}
-          <div className="space-y-8">
+          <div className="space-y-6 lg:sticky lg:top-28">
             
             {/* Quick Contact CTA */}
-            <div className="bg-gradient-to-br from-brand-primary to-[#1A5C28] p-8 rounded-[2rem] shadow-xl text-white text-center sticky top-24">
-              <h3 className="text-2xl font-bold mb-4">Need this service?</h3>
-              <p className="text-white/80 mb-8 font-medium">Contact our experts today for a free consultation and quote.</p>
+            <div className="bg-gradient-to-br from-brand-primary to-[#1A5C28] p-6 lg:p-8 rounded-3xl shadow-xl text-white text-center">
+              <h3 className="text-xl lg:text-2xl font-bold mb-3">Need this service?</h3>
+              <p className="text-white/80 mb-6 text-sm lg:text-base font-medium">Contact our experts today for a free consultation and quote.</p>
               <a 
                 href={`tel:${siteData.contact.phone.replace(/\D/g, '')}`}
-                className="w-full bg-white text-brand-primary font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors shadow-md"
+                className="w-full bg-white text-brand-primary font-bold py-3.5 lg:py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors shadow-md"
               >
                 <PhoneCall className="w-5 h-5" />
                 {siteData.contact.phone}
               </a>
               
-              {/* Back to Services */}
-              <Link 
-                href="/#services" 
-                className="flex items-center justify-center gap-2 text-white/80 hover:text-white font-medium transition-colors mt-6 pt-6 border-t border-white/20"
+              {/* WhatsApp CTA */}
+              <a 
+                href={`https://wa.me/${siteData.contact.phone.replace(/\D/g, '')}?text=Hi%20PROFESSIONALz,%20I'm%20interested%20in%20your%20${encodeURIComponent(service.name)}%20service.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-white bg-white/10 hover:bg-white/20 font-bold transition-colors mt-4 py-3 rounded-xl border border-white/20 w-full shadow-sm"
               >
-                <ArrowLeft className="w-5 h-5" />
-                Back to All Services
-              </Link>
+                <MessageCircle className="w-5 h-5" />
+                Message on WhatsApp
+              </a>
             </div>
 
           </div>

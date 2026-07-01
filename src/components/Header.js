@@ -90,20 +90,6 @@ export default function Header() {
                   <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 w-[600px] z-50 ${isDesktopServicesOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-2 invisible'}`}>
                     <div className="bg-white rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden flex flex-col p-5 pointer-events-auto">
                       
-                      <div className="flex justify-between items-center mb-4 pb-4 border-b border-gray-100 px-2">
-                        <div>
-                          <h3 className="font-bold text-gray-900 text-lg">Pest Control Services</h3>
-                          <p className="text-sm text-gray-500">Comprehensive treatments for a safe environment</p>
-                        </div>
-                        <Link
-                          href="/services"
-                          onClick={() => setIsDesktopServicesOpen(false)}
-                          className="text-sm font-bold text-brand-primary hover:text-brand-accent transition-colors bg-brand-primary/5 px-4 py-2 rounded-lg shrink-0"
-                        >
-                          View All
-                        </Link>
-                      </div>
-
                       <div className="grid grid-cols-2 gap-2">
                         {servicesData.map(service => {
                           const Icon = service.icon;
@@ -211,13 +197,7 @@ export default function Header() {
                     {/* Mobile Dropdown */}
                     <div className={`overflow-hidden transition-all duration-300 ${isServicesOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
                       <div className="flex flex-col pl-4 space-y-1 border-l-2 border-brand-primary/20 ml-6 py-2">
-                        <Link
-                          href="/services"
-                          onClick={() => setIsOpen(false)}
-                          className="py-2.5 px-4 rounded-xl text-brand-primary font-bold hover:bg-brand-primary/5 transition-colors"
-                        >
-                          All Services
-                        </Link>
+
                         {servicesData.map(service => (
                           <Link
                             key={service.id}

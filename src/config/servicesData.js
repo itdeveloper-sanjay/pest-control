@@ -48,7 +48,7 @@ export const servicesData = [
           </p>
         </div>
 
-        <div className="bg-brand-primary/5 p-6 rounded-2xl border border-brand-primary/10">
+        <div className="bg-brand-primary/5 p-4 sm:p-5 md:p-6 rounded-2xl border border-brand-primary/10">
           <h3 className="text-xl font-bold text-brand-primary mb-4">FEATURES AND ADVANTAGES</h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>Our ActiveGel service is the Advanced Cockroach Management Service wherein the highly potent active ingredient is applied at all the cockroach hideouts.</li>
@@ -99,7 +99,7 @@ export const servicesData = [
           <Image src={rodexTreatmentImg} alt="Rodent Treatment" className="w-full h-auto object-cover" />
         </div>
 
-        <div className="bg-red-50 p-6 rounded-2xl border border-red-100">
+        <div className="bg-red-50 p-4 sm:p-5 md:p-6 rounded-2xl border border-red-100">
           <h3 className="text-2xl font-bold text-red-600 mb-4">HAZARDS OF RATS & MICE</h3>
           <p className="mb-4">
             Rodents may bite if cornered, which can transmit a dangerous disease such as rat-bite fever, murine typhus and hantavirus pulmonary syndrome, among other diseases. Rodent urine and feces also contain many diseases. The urine contains allergens that can cause an attack with people who have allergies or asthma. Urine can also stain large areas and cause the area to stink. Rodents may chew through electrical wires, which can start fires, or they can cause structural damage by gnawing on wood.
@@ -136,7 +136,7 @@ export const servicesData = [
           </ol>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="bg-white p-4 sm:p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100">
           <h4 className="text-xl font-bold text-brand-primary mb-3">Post Construction Anti Termite Treatment:</h4>
           <p className="mb-4">
             It comprises of drilling holes in the junction of floor and wall, soaking them with the termiticide and sealing them. This makes a completely undetectable chemical barrier around your property. Termites unknowingly forage through treated area, quickly passing the termiticide throughout their population. This leads faster control of termites.
@@ -151,7 +151,7 @@ export const servicesData = [
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="bg-white p-4 sm:p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100">
           <h4 className="text-xl font-bold text-brand-primary mb-3">Pre Construction Anti termite Treatment:</h4>
           <p className="mb-4">
             It comprises of different Specifications for different stages, for which we follow IS-CODE {`{IS 6313 (Part-II)}`} and our own researched & developed methods.
@@ -196,7 +196,7 @@ export const servicesData = [
           </p>
         </div>
 
-        <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
+        <div className="bg-yellow-50 p-4 sm:p-5 md:p-6 rounded-2xl border border-yellow-200">
           <h4 className="text-lg font-bold text-yellow-800 mb-2 text-center">PLEASE NOTE</h4>
           <p className="text-yellow-900 text-sm md:text-base text-center">
             Most of the time the termite damage remains hidden and is not noticed till major damage had already taken place. The termites are hidden invaders enter the buildings through the natural cracks and crevices in the structures. They also construct mud tubes as pathways. The presence of mud tubes is the sign of Termite infestation.<br /><br />
@@ -248,7 +248,7 @@ export const servicesData = [
           </p>
         </div>
 
-        <div className="bg-brand-primary/5 p-6 rounded-2xl border border-brand-primary/10">
+        <div className="bg-brand-primary/5 p-4 sm:p-5 md:p-6 rounded-2xl border border-brand-primary/10">
           <h3 className="text-xl font-bold text-brand-primary mb-4">Bed Bug Management Service</h3>
           <p className="mb-3">Our service comprises of treating all places where the bed bugs may be hiding:</p>
           <ul className="list-disc pl-5 space-y-2 mb-4">
@@ -290,7 +290,7 @@ export const servicesData = [
           </p>
         </div>
 
-        <div className="bg-brand-primary/5 p-6 rounded-2xl border border-brand-primary/10">
+        <div className="bg-brand-primary/5 p-4 sm:p-5 md:p-6 rounded-2xl border border-brand-primary/10">
           <h3 className="text-xl font-bold text-brand-primary mb-4">Treatment Methodology</h3>
           <p>
             Wood borer treatment comprises of treating each and every tunnel created by the wood boring insect by using insecticide in oil based solutions. Each and every tunnel is carefully identified and treated to get the desired results. Oil solution sprays are also carried out to the furniture in nearby area to avoid the re-occurrence and spread of the borer infestation in healthy wood.
@@ -321,7 +321,7 @@ export const servicesData = [
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="bg-white p-4 sm:p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100">
           <h4 className="text-xl font-bold text-brand-text-primary mb-4">Types/ species of Mosquitoes:</h4>
           <ul className="list-disc pl-5 space-y-2 mb-4">
             <li><strong>Anopheles spp.</strong> – prefers clean water for breeding</li>
@@ -344,7 +344,7 @@ export const servicesData = [
         <div className="space-y-6">
           <h3 className="text-2xl font-bold text-brand-text-primary">Different Methods of MOSQUITO MANAGEMENT:</h3>
 
-          <div className="bg-brand-primary/5 p-6 rounded-2xl border border-brand-primary/10">
+          <div className="bg-brand-primary/5 p-4 sm:p-5 md:p-6 rounded-2xl border border-brand-primary/10">
             <h4 className="text-lg font-bold text-brand-primary mb-2">Larvicidal Treatment:</h4>
             <p className="mb-3">Treatment to all water bodies or breeding places in and around the vicinity.</p>
             <ul className="list-disc pl-5 space-y-2">
@@ -353,14 +353,14 @@ export const servicesData = [
             </ul>
           </div>
 
-          <div className="bg-brand-primary/5 p-6 rounded-2xl border border-brand-primary/10">
+          <div className="bg-brand-primary/5 p-4 sm:p-5 md:p-6 rounded-2xl border border-brand-primary/10">
             <h4 className="text-lg font-bold text-brand-primary mb-2">ADULTICIDAL TREATMENT: INDOOR RESIDUAL SPRAY</h4>
             <p>
               On occasions in mosquito abatement programme chemicals are required to be applied to kill adult mosquitoes. This is achieved by applying residual pesticides frequently indoor inside the houses so that the resting mosquitoes are controlled.
             </p>
           </div>
 
-          <div className="bg-brand-primary/5 p-6 rounded-2xl border border-brand-primary/10">
+          <div className="bg-brand-primary/5 p-4 sm:p-5 md:p-6 rounded-2xl border border-brand-primary/10">
             <h4 className="text-lg font-bold text-brand-primary mb-2">ADULTICIDING OUT DOOR APPLICATION: FOGGING OR MISTING</h4>
             <p>
               Thermal foggers / misters have been used to generate Fogs / wherein the pesticidal smoke/ mists are created to kill the adult mosquitoes. It always better to use misting as it leaves insecticidal residues in treated areas. Fogging gives psychological impact however the effect of the fog/ smoke is lost quickly out door and thus treatment does not give any protection once the fog is diluted.
@@ -408,7 +408,7 @@ export const servicesData = [
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="bg-white p-4 sm:p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100">
           <h3 className="text-2xl font-bold text-brand-text-primary mb-4">When to Use Pest Control?</h3>
           <p className="mb-4">
             Pests are inclined to be most active during the warmest part of the growing season. It is often a great thought to remove pests until they hatch or promptly after hatching. However, you do not need to over-implement pest control in expectation of the problem (unless you have had an on-going issue with pests, naturally).
@@ -454,7 +454,7 @@ export const servicesData = [
           </p>
         </div>
 
-        <div className="bg-brand-primary/5 p-6 rounded-2xl border border-brand-primary/10">
+        <div className="bg-brand-primary/5 p-4 sm:p-5 md:p-6 rounded-2xl border border-brand-primary/10">
           <h3 className="text-xl font-bold text-brand-primary mb-4">Integrated Pest Management (IPM) Program</h3>
           <p className="mb-4">
             Retail greenhouses should have a weekly, integrated pest management (IPM) program in place to detect problems early. A regular monitoring program using sticky cards and plant inspection is the basis of all pest management programs. Early detection and treatment will result in better pest control, while pest populations are low and before pests move throughout the greenhouse. Retailers will find through experience that some plants will need to be monitored more carefully than others throughout the course of a year.

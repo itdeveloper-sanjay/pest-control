@@ -1,6 +1,9 @@
 "use client";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { servicesData } from '@/config/servicesData';
+import { ArrowRight } from 'lucide-react';
 import service1 from '@/assets/services/service1.webp';
 import sitePreparationImg from '@/assets/services/site-prepration.webp';
 import soilTreatmentImg from '@/assets/services/soil-tretement.webp';

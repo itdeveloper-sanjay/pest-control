@@ -2,7 +2,8 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { servicesData } from '../config/servicesData';
-import { ShieldAlert, Quote, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ShieldAlert, Quote, CheckCircle2 } from 'lucide-react';
+import ServicesGrid from './ServicesGrid';
 
 export default function HomeAbout() {
   const containerVariants = {
@@ -23,43 +24,6 @@ export default function HomeAbout() {
       <section className="py-24 lg:py-32 bg-white overflow-hidden relative font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Modern Quote Section */}
-        {/* Modern Quote Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8 }}
-          className="relative max-w-3xl mx-auto mb-16 md:mb-24 px-4"
-        >
-          <div className="bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-primary/5 border border-brand-primary/10 px-6 py-5 md:px-8 md:py-6 rounded-3xl relative overflow-hidden shadow-sm flex flex-col md:flex-row items-center gap-5 md:gap-8">
-            
-            <div className="absolute -top-4 -right-4 opacity-5 rotate-12">
-               <Quote className="w-32 h-32" />
-            </div>
-            
-            <div className="shrink-0 relative z-10 hidden md:block">
-              <div className="w-12 h-12 bg-brand-primary rounded-xl flex items-center justify-center shadow-lg shadow-brand-primary/30 -rotate-3 hover:rotate-0 transition-transform">
-                <Quote className="w-6 h-6 text-white fill-current" />
-              </div>
-            </div>
-
-            <div className="relative z-10 text-center md:text-left flex-1">
-              <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center shadow-md shadow-brand-primary/30 mx-auto mb-4 md:hidden">
-                <Quote className="w-5 h-5 text-white fill-current" />
-              </div>
-              
-              <h2 className="text-base md:text-lg lg:text-xl font-medium text-gray-800 leading-relaxed mb-4 italic">
-                "A pest is an organism which is detrimental to man. Among the various pests which man encounters, the insects form the major group, against which man has to fight forever."
-              </h2>
-              <div className="inline-flex items-center gap-2.5 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-                <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
-                <span className="font-bold text-gray-900 tracking-widest text-[10px] md:text-xs uppercase">Professional'z Vision</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
           {/* Intro & Philosophy Split */}
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <motion.div
@@ -82,16 +46,6 @@ export default function HomeAbout() {
                 <p>
                   We may not be the first Pest Control Company in India, but we are bringing the best technology to Indians for domestic and commercial needs. We don't wish to be known as just another pest control company; our aim is to be recognized as people who deliver complete customer satisfaction.
                 </p>
-              </div>
-              <div className="flex items-center gap-4 pt-4">
-                 <div className="flex -space-x-4">
-                   {[...Array(4)].map((_, i) => (
-                     <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center">
-                       <CheckCircle2 className="w-6 h-6 text-brand-primary" />
-                     </div>
-                   ))}
-                 </div>
-                 <span className="text-sm font-semibold text-gray-500">Trusted by 1000+ Families</span>
               </div>
             </motion.div>
 
@@ -124,64 +78,42 @@ export default function HomeAbout() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
 
-      {/* Services Grid - Dark Modern Section */}
-      <section className="py-24 lg:py-32 bg-slate-900 relative overflow-hidden font-sans">
-        {/* Decorative Background Elements */}
-        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-brand-primary/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-brand-accent/5 blur-3xl rounded-full translate-y-1/2 -translate-x-1/3"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+          {/* Modern Quote Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+            className="relative max-w-3xl mx-auto mt-16 md:mt-24 px-4"
           >
-            <div className="text-center mb-16">
-              <span className="text-brand-primary font-bold uppercase tracking-widest text-sm mb-3 block">Our Expertise</span>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                Comprehensive Treatments
-              </h3>
-              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                We provide highly specialized services for all pest-related problems. Controlling them is generally best left to <strong className="text-gray-200">PROFESSIONAL’z</strong>.
-              </p>
-            </div>
+            <div className="bg-brand-primary/5 border border-brand-primary/10 p-6 md:p-8 rounded-3xl relative overflow-hidden shadow-sm flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-8">
+              
+              <div className="absolute top-0 right-0 opacity-[0.03] transform translate-x-1/4 -translate-y-1/4 pointer-events-none">
+                 <Quote className="w-48 h-48" />
+              </div>
+              
+              <div className="shrink-0 relative z-10">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-primary rounded-xl flex items-center justify-center shadow-lg shadow-brand-primary/30 -rotate-3 hover:rotate-0 transition-transform">
+                  <Quote className="w-5 h-5 md:w-6 md:h-6 text-white fill-current" />
+                </div>
+              </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-              {servicesData.map((service, idx) => {
-                const Icon = service.icon;
-                return (
-                  <Link key={service.id || idx} href={`/services/${service.slug}`} className="block h-full outline-none">
-                    <motion.div 
-                      variants={itemVariants}
-                      className="bg-slate-800/40 backdrop-blur-md p-4 md:p-5 rounded-2xl border border-white/5 hover:border-brand-primary/40 hover:bg-slate-800/80 hover:-translate-y-1.5 hover:shadow-[0_10px_40px_rgba(46,125,50,0.15)] transition-all duration-500 flex flex-col items-start text-left group h-full cursor-pointer relative overflow-hidden"
-                    >
-                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-brand-primary/20 to-transparent rounded-bl-full -mr-4 -mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                      <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center mb-3 group-hover:bg-brand-primary transition-colors duration-500 shrink-0 border border-white/10 group-hover:border-brand-primary relative z-10">
-                        <Icon className="w-5 h-5 text-brand-primary group-hover:text-white transition-colors duration-500" />
-                      </div>
-                      
-                      <div className="relative z-10 flex-1 flex flex-col w-full">
-                        <h4 className="font-bold text-white text-base mb-1.5 leading-tight group-hover:text-brand-primary transition-colors duration-500">{service.name}</h4>
-                        <p className="text-gray-400 text-xs leading-relaxed mb-4 flex-1">{service.shortDesc}</p>
-                        
-                        <div className="mt-auto flex items-center text-[11px] font-bold text-brand-primary uppercase tracking-wider group-hover:text-white transition-colors duration-300">
-                          Explore Treatment 
-                          <ArrowRight className="w-3 h-3 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" />
-                        </div>
-                      </div>
-                    </motion.div>
-                  </Link>
-                );
-              })}
+              <div className="relative z-10 text-left flex-1">
+                <h2 className="text-base md:text-lg lg:text-xl font-medium text-gray-800 leading-relaxed mb-5">
+                  "A pest is an organism which is detrimental to man. Among the various pests which man encounters, the insects form the major group, against which man has to fight forever."
+                </h2>
+                <div className="inline-flex items-center gap-2.5 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                  <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+                  <span className="font-bold text-gray-900 tracking-widest text-[10px] md:text-xs uppercase">Professional'z Vision</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
+      {/* Services Grid - Dark Modern Section */}
+      <ServicesGrid />
     </>
   );
 }
